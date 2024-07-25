@@ -1,20 +1,17 @@
-from catboost import CatBoostRegressor
+from catboost import CatBoostRegressor, Pool
 import joblib
 import streamlit as st
 import pandas as pd
-import joblib
-from catboost import CatBoostRegressor
-from catboost import Pool
 
 # Load the dataset
-@st.cache
+@st.cache_data
 def load_data():
     data = pd.read_csv('hdb-resale-price.csv')
     data['lease_commence_year'] = pd.to_datetime(data['lease_commence_date'], format='%Y').dt.year
     return data
 
 # Load the model
-@st.cache(allow_output_mutation=True)
+@st.cache_resource
 def load_model():
     try:
         with open('house_price_prediction_catboost.pkl', 'rb') as file:
