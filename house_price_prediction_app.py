@@ -40,9 +40,9 @@ def main():
     st.header("Input Features")
     # ['closest_mrt_dist', 'cbd_dist', 'floor_area_sqm']
     
-    closest_mrt_dist = st.number_input("Closest MRT Distance (m)", min_value=0.0, max_value=50000.0, help="The distance to the nearest MRT station in meters.")
-    cbd_dist = st.number_input("CBD Distance (m)", min_value=0.0, max_value=50000.0, help="The distance to the Central Business District in meters.")
-    floor_area_sqm = st.number_input("Floor Area (sqm)", min_value=10.0, max_value=2000.0, help="The floor area of the property in square meters.")
+    closest_mrt_dist = st.number_input("Closest MRT Distance (m)", min_value=31.759821, max_value=3496.402761, help="The distance to the nearest MRT station in meters.")
+    cbd_dist = st.number_input("CBD Distance (m)", min_value=592.121638	, max_value=20225.103698, help="The distance to the Central Business District in meters.")
+    floor_area_sqm = st.number_input("Floor Area (sqm)", min_value=31.0, max_value=266.0, help="The floor area of the property in square meters.")
     
     input_features = pd.DataFrame({
         'closest_mrt_dist': [closest_mrt_dist],
