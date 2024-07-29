@@ -51,6 +51,12 @@ def main():
     })
     
     st.write(input_features)
+
+    input_features = pd.DataFrame({
+        'closest_mrt_dist': [closest_mrt_dist/1000],
+        'cbd_dist': [cbd_dist/1000],
+        'floor_area_sqm': [floor_area_sqm/1000]
+    })
     
     
     # Load model
